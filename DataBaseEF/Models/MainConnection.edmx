@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BKS_Books">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="int" Nullable="false" />
+          <Property Name="BookTitle" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ViewBookTitle" Type="nvarchar" MaxLength="2000" />
+          <Property Name="VolNumber" Type="smallint" Nullable="false" />
+          <Property Name="InternalID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CMS_DialogLangID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="PageNumber" Type="int" Nullable="false" />
+          <Property Name="Free" Type="bit" Nullable="false" />
+          <Property Name="FullText" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="PublisherID" Type="int" Nullable="false" />
+          <Property Name="SizeID" Type="int" Nullable="false" />
+          <Property Name="PublishPlace" Type="nvarchar" MaxLength="500" />
+          <Property Name="PublishYear" Type="nvarchar" MaxLength="500" />
+          <Property Name="NewBoxViewCount" Type="int" Nullable="false" />
+          <Property Name="HasImageBook" Type="bit" />
+          <Property Name="HasImageCover" Type="bit" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="SearchBookTitle" Type="nvarchar(max)" />
+          <Property Name="HasTextBook" Type="bit" />
+          <Property Name="HasPdf" Type="bit" />
+          <Property Name="ImageID" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Congress" Type="nvarchar" MaxLength="200" />
+          <Property Name="BookWeigh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ISBN10" Type="nvarchar" MaxLength="50" />
+          <Property Name="ISBN13" Type="nvarchar" MaxLength="50" />
+          <Property Name="KeyWords" Type="nvarchar" MaxLength="2000" />
+          <Property Name="PrintNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DataVersion" Type="int" />
+          <Property Name="ShowText" Type="bit" />
+          <Property Name="ShowTextUrl" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BKS_Books" EntityType="Self.BKS_Books" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BKS_Books">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="Int32" Nullable="false" />
+          <Property Name="BookTitle" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ViewBookTitle" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="VolNumber" Type="Int16" Nullable="false" />
+          <Property Name="InternalID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CMS_DialogLangID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PageNumber" Type="Int32" Nullable="false" />
+          <Property Name="Free" Type="Boolean" Nullable="false" />
+          <Property Name="FullText" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PublisherID" Type="Int32" Nullable="false" />
+          <Property Name="SizeID" Type="Int32" Nullable="false" />
+          <Property Name="PublishPlace" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PublishYear" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NewBoxViewCount" Type="Int32" Nullable="false" />
+          <Property Name="HasImageBook" Type="Boolean" />
+          <Property Name="HasImageCover" Type="Boolean" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="SearchBookTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HasTextBook" Type="Boolean" />
+          <Property Name="HasPdf" Type="Boolean" />
+          <Property Name="ImageID" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Congress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BookWeigh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KeyWords" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="PrintNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DataVersion" Type="Int32" />
+          <Property Name="ShowText" Type="Boolean" />
+          <Property Name="ShowTextUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BKS_Books" EntityType="Self.BKS_Books" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="BKS_Books">
+            <EntityTypeMapping TypeName="Model.BKS_Books">
+              <MappingFragment StoreEntitySet="BKS_Books">
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+                <ScalarProperty Name="ViewBookTitle" ColumnName="ViewBookTitle" />
+                <ScalarProperty Name="VolNumber" ColumnName="VolNumber" />
+                <ScalarProperty Name="InternalID" ColumnName="InternalID" />
+                <ScalarProperty Name="CMS_DialogLangID" ColumnName="CMS_DialogLangID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+                <ScalarProperty Name="Free" ColumnName="Free" />
+                <ScalarProperty Name="FullText" ColumnName="FullText" />
+                <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="PublishPlace" ColumnName="PublishPlace" />
+                <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+                <ScalarProperty Name="NewBoxViewCount" ColumnName="NewBoxViewCount" />
+                <ScalarProperty Name="HasImageBook" ColumnName="HasImageBook" />
+                <ScalarProperty Name="HasImageCover" ColumnName="HasImageCover" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="SearchBookTitle" ColumnName="SearchBookTitle" />
+                <ScalarProperty Name="HasTextBook" ColumnName="HasTextBook" />
+                <ScalarProperty Name="HasPdf" ColumnName="HasPdf" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="Congress" ColumnName="Congress" />
+                <ScalarProperty Name="BookWeigh" ColumnName="BookWeigh" />
+                <ScalarProperty Name="ISBN10" ColumnName="ISBN10" />
+                <ScalarProperty Name="ISBN13" ColumnName="ISBN13" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="PrintNumber" ColumnName="PrintNumber" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="DataVersion" ColumnName="DataVersion" />
+                <ScalarProperty Name="ShowText" ColumnName="ShowText" />
+                <ScalarProperty Name="ShowTextUrl" ColumnName="ShowTextUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
